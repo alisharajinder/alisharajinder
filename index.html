@@ -1,133 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alisha ❤️ Rajinder | Ring Ceremony</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins&display=swap" rel="stylesheet">
-
-<style>
-body {
-  margin:0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #fff5f7, #f8f4f0);
-  color:#333;
-  text-align:center;
-}
-
-.hero {
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-  url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486');
-  background-size:cover;
-  color:white;
-}
-
-h1 {
-  font-family:'Playfair Display', serif;
-  font-size:3rem;
-}
-
-.section {
-  padding:50px 20px;
-}
-
-.card {
-  background:white;
-  margin:20px auto;
-  padding:25px;
-  border-radius:15px;
-  max-width:500px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-
-.countdown {
-  font-size:1.5rem;
-  margin-top:10px;
-}
-
-.btn {
-  display:inline-block;
-  margin-top:15px;
-  padding:10px 20px;
-  border-radius:25px;
-  background:#d4a373;
-  color:white;
-  text-decoration:none;
-}
-
-footer {
-  padding:20px;
-  font-size:0.9rem;
-}
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<div class="hero">
-  <h1>Alisha ❤️ Rajinder</h1>
-  <p>Ring Ceremony Celebration</p>
-  <p>18 April 2026 | 7 PM onwards</p>
+<div style="margin:20px;">
+  <button onclick="playMusic()" class="btn">🎵 Play Music</button>
 </div>
 
-<!-- COUNTDOWN -->
-<div class="section">
-  <h2>Countdown to Our Special Day</h2>
-  <div class="countdown" id="countdown"></div>
-</div>
-
-<!-- VENUE -->
-<div class="section">
-  <div class="card">
-    <h2>Venue</h2>
-    <p><b>Best Western Merrion</b></p>
-    <p>Allure Banquet</p>
-    <p>B Block, Ranjit Avenue, Amritsar</p>
-    <a class="btn" href="https://maps.app.goo.gl/VxLi1LGfHG9u6B4W6?g_st=aw" target="_blank">View on Map</a>
-  </div>
-</div>
-
-<!-- RSVP -->
-<div class="section">
-  <div class="card">
-    <h2>RSVP</h2>
-    <p>Please confirm your presence</p>
-    <a class="btn" href="https://forms.gle/" target="_blank">RSVP Now</a>
-  </div>
-</div>
-
-<!-- MUSIC -->
-<audio autoplay loop>
+<audio id="bgMusic" loop>
   <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9b6b77.mp3" type="audio/mpeg">
 </audio>
 
-<footer>
-  Made with ❤️ for Alisha & Rajinder
-</footer>
-
 <script>
-const countdown = document.getElementById("countdown");
-const eventDate = new Date("April 18, 2026 19:00:00").getTime();
-
-setInterval(() => {
-  const now = new Date().getTime();
-  const gap = eventDate - now;
-
-  const d = Math.floor(gap / (1000*60*60*24));
-  const h = Math.floor((gap % (1000*60*60*24)) / (1000*60*60));
-  const m = Math.floor((gap % (1000*60*60)) / (1000*60));
-  const s = Math.floor((gap % (1000*60)) / 1000);
-
-  countdown.innerHTML = `${d}d ${h}h ${m}m ${s}s`;
-}, 1000);
+function playMusic() {
+  const music = document.getElementById("bgMusic");
+  music.play();
+}
 </script>
-
-</body>
-</html>
